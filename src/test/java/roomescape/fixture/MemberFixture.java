@@ -5,11 +5,21 @@ import static roomescape.domain.Role.MEMBER;
 
 import roomescape.domain.Member;
 import roomescape.domain.Sha256Encryptor;
+import roomescape.dto.LoginRequest;
+import roomescape.dto.UserInfo;
 
-public class MemberBuilder {
+public class MemberFixture {
     private static final Sha256Encryptor ENCRYPTOR = new Sha256Encryptor();
-    public static final Member DEFAULT_MEMBER = asMember(1L, "name", "email@email.com", "1234");
-    public static final Member DEFAULT_ADMIN = asAdmin(2L, "admin", "email@email.com", "1234");
+    public static final Member DEFAULT_MEMBER = asMember(1L, "member", "email@email.com", "qwer");
+    public static final LoginRequest DEFAULT_MEMBER_LOGIN_REQUEST = new LoginRequest(DEFAULT_MEMBER.getEmail(),
+            DEFAULT_MEMBER.getEncryptedPassword());
+    public static final UserInfo DEFAULT_MEMBER_INFO = new UserInfo(DEFAULT_MEMBER.getId(), DEFAULT_MEMBER.getName(),
+            DEFAULT_MEMBER.getRole().name());
+    public static final Member DEFAULT_ADMIN = asAdmin(2L, "admin", "email2@email.com", "qwer");
+    public static final LoginRequest DEFAULT_ADMIN_LOGIN_REQUEST = new LoginRequest(DEFAULT_ADMIN.getEmail(),
+            DEFAULT_ADMIN.getEncryptedPassword());
+    public static final UserInfo DEFAULT_ADMIN_INFO = new UserInfo(DEFAULT_ADMIN.getId(), DEFAULT_ADMIN.getName(),
+            DEFAULT_ADMIN.getRole().name());
 
     public static Member asAdmin(String name, String email, String password) {
         return new Member(null, name, email, ENCRYPTOR.encrypt(password), ADMIN);

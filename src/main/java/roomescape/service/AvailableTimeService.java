@@ -35,6 +35,7 @@ public class AvailableTimeService {
                 .toList();
     }
 
+    //Todo 클래스 분리
     private AvailableTimeResponse toResponse(Set<ReservationTime> alreadyUsedTimes, ReservationTime reservationTime) {
         boolean isBooked = alreadyUsedTimes.contains(reservationTime);
         long id = reservationTime.getId();

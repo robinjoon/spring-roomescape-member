@@ -34,6 +34,7 @@ public class ReservationTimeService {
         return toResponse(saved);
     }
 
+    //Todo 클래스 분리
     private ReservationTimeResponse toResponse(ReservationTime saved) {
         return new ReservationTimeResponse(saved.getId(), saved.getStartAt());
     }

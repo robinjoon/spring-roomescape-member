@@ -37,6 +37,7 @@ public class ThemeService {
         return toResponse(saved);
     }
 
+    //Todo 클래스 분리
     private ThemeResponse toResponse(Theme theme) {
         return new ThemeResponse(theme.getId(), theme.getName(), theme.getDescription(), theme.getThumbnail());
     }

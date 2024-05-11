@@ -1,8 +1,8 @@
 package roomescape.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static roomescape.fixture.MemberBuilder.DEFAULT_MEMBER;
-import static roomescape.fixture.ThemeBuilder.DEFAULT_THEME;
+import static roomescape.fixture.MemberFixture.DEFAULT_MEMBER;
+import static roomescape.fixture.ThemeFixture.DEFAULT_THEME;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

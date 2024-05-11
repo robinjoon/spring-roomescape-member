@@ -76,6 +76,7 @@ public class ReservationService {
         }
     }
 
+    //Todo 클래스 분리
     private ReservationResponse toResponse(Reservation reservation) {
         ReservationTime reservationTime = reservation.getReservationTime();
         ReservationTimeResponse reservationTimeResponse = new ReservationTimeResponse(reservationTime.getId(),
