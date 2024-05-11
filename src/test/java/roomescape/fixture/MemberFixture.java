@@ -16,24 +16,12 @@ public class MemberFixture {
     public static final UserInfo DEFAULT_MEMBER_INFO = new UserInfo(DEFAULT_MEMBER.getId(), DEFAULT_MEMBER.getName(),
             DEFAULT_MEMBER.getRole().name());
     public static final Member DEFAULT_ADMIN = asAdmin(2L, "admin", "email2@email.com", "qwer");
-    public static final LoginRequest DEFAULT_ADMIN_LOGIN_REQUEST = new LoginRequest(DEFAULT_ADMIN.getEmail(),
-            DEFAULT_ADMIN.getEncryptedPassword());
-    public static final UserInfo DEFAULT_ADMIN_INFO = new UserInfo(DEFAULT_ADMIN.getId(), DEFAULT_ADMIN.getName(),
-            DEFAULT_ADMIN.getRole().name());
 
-    public static Member asAdmin(String name, String email, String password) {
-        return new Member(null, name, email, ENCRYPTOR.encrypt(password), ADMIN);
-    }
-
-    public static Member asAdmin(long id, String name, String email, String password) {
+    private static Member asAdmin(long id, String name, String email, String password) {
         return new Member(id, name, email, ENCRYPTOR.encrypt(password), ADMIN);
     }
 
-    public static Member asMember(long id, String name, String email, String password) {
+    private static Member asMember(long id, String name, String email, String password) {
         return new Member(id, name, email, ENCRYPTOR.encrypt(password), MEMBER);
-    }
-
-    public static Member asMember(String name, String email, String password) {
-        return new Member(null, name, email, ENCRYPTOR.encrypt(password), MEMBER);
     }
 }
