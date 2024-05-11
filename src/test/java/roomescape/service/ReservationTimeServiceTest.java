@@ -37,8 +37,8 @@ class ReservationTimeServiceTest {
                 .hasMessage(DUPLICATE_RESERVATION_TIME.getMessage());
     }
 
-    @DisplayName("예약 시간을 사용하는 예약이 있으면 예약을 삭제할 수 없다.")
     @Test
+    @DisplayName("예약 시간을 사용하는 예약이 있으면 예약을 삭제할 수 없다.")
     void deleteFailWhenUsed() {
         reservationTimeService.save(ReservationTimeFixture.DEFAULT_REQUEST);
         reservationRepository.save(DEFAULT_RESERVATION);

@@ -35,8 +35,8 @@ class AvailableTimeServiceTest {
         availableTimeService = new AvailableTimeService(reservationTimeRepository, themeRepository);
     }
 
-    @DisplayName("날짜와 테마, 시간에 대한 예약 내역을 확인할 수 있다.")
     @Test
+    @DisplayName("날짜와 테마, 시간에 대한 예약 내역을 확인할 수 있다.")
     void findAvailableTimeTest() {
         //given
         themeRepository.save(DEFAULT_THEME);
